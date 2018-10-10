@@ -12,10 +12,13 @@ if (input === "concert-this") {
     var artist = process.argv[3];
     var queryUrlMusic = "https://rest.bandsintown.com/artists/" + artist + "/events?app_id=codingbootcamp";
     request(queryUrlMusic, function (error, response, body) {
-        console.log("Venue: " + JSON.parse(body).VenueData.name);
+        console.log(concert.venue)
+        console.log("Venue: " + JSON.parse(body).venue);
     });
 
 }
+
+
 
 if (input === "spotify-this-song") {
     console.log("Song");
@@ -27,7 +30,7 @@ if (input === "movie-this") {
     request(queryUrlMovie, function (error, response, body) {
         console.log("Title: " + JSON.parse(body).Title);
         console.log("Year: " + JSON.parse(body).Year);
-        console.log("Rating: " + JSON.parse(body).Ratings); // returning objects
+        console.log("Rating: " + JSON.parse(body).imdbRating); 
         console.log("Country: " + JSON.parse(body).Country);
         console.log("Language: " + JSON.parse(body).Language);
         console.log("Plot: " + JSON.parse(body).Plot);
